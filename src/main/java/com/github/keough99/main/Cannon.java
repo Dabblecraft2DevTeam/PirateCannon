@@ -88,7 +88,7 @@ public class Cannon
           i++;
         }
         sign.setLine(0, "[Cannon]");
-        sign.setLine(1, unusedids.get(0));
+        sign.setLine(1,""+ unusedids.get(0));
         sign.setLine(2, "");
         sign.setLine(3, "");
         sign.update(true);
@@ -146,9 +146,9 @@ public class Cannon
         } else if (plugin.getConfig().getString("cannoncooldownoutput").equalsIgnoreCase("message+int")) {
           Bukkit.getPlayer(playername).sendMessage(ChatColor.DARK_AQUA + "This cannon is still cooling down. Remaining time: " + ChatColor.AQUA + (plugin.getConfig().getInt("cannoncooldown") - cannondelaytime) / 1000L + "s");
         } else if (plugin.getConfig().getString("cannoncooldownoutput").equalsIgnoreCase("double")) {
-          Bukkit.getPlayer(playername).sendMessage(ChatColor.AQUA + (plugin.getConfig().getInt("cannoncooldown") - cannondelaytime) / 1000.0D + "s");
+          Bukkit.getPlayer(playername).sendMessage(""+ChatColor.AQUA + (plugin.getConfig().getInt("cannoncooldown") - cannondelaytime) / 1000.0D + "s");
         } else if (plugin.getConfig().getString("cannoncooldownoutput").equalsIgnoreCase("int")) {
-          Bukkit.getPlayer(playername).sendMessage(ChatColor.AQUA + (plugin.getConfig().getInt("cannoncooldown") - cannondelaytime) / 1000L + "s");
+          Bukkit.getPlayer(playername).sendMessage(""+ChatColor.AQUA + (plugin.getConfig().getInt("cannoncooldown") - cannondelaytime) / 1000L + "s");
         }
       }
     }
@@ -177,7 +177,7 @@ public class Cannon
         Bukkit.getPlayer(playername).sendMessage(ChatColor.DARK_AQUA + "You need some munition to fire this Cannon!");
         Bukkit.getPlayer(playername).sendMessage(ChatColor.DARK_AQUA + "Munition type ids: ");
         for (int i = 0; i < ammo.size(); i++) {
-          Bukkit.getPlayer(playername).sendMessage(ChatColor.AQUA + countofammo.get(i) + ChatColor.DARK_AQUA + " x " + ChatColor.AQUA + Material.getMaterial(((Integer)ammo.get(i)).intValue()).name() + ChatColor.DARK_AQUA + " (id: " + ChatColor.AQUA + ammo.get(i) + ChatColor.DARK_AQUA + ")");
+          Bukkit.getPlayer(playername).sendMessage(""+ChatColor.AQUA + countofammo.get(i) + ChatColor.DARK_AQUA + " x " + ChatColor.AQUA + Material.getMaterial(((Integer)ammo.get(i)).intValue()).name() + ChatColor.DARK_AQUA + " (id: " + ChatColor.AQUA + ammo.get(i) + ChatColor.DARK_AQUA + ")");
         }
       }
     }

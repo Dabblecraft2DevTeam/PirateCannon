@@ -271,7 +271,7 @@ public class PirateCannon
         }
         event.getPlayer().sendMessage(ChatColor.AQUA + "Cannon created successfully.");
         event.setLine(0, "[Cannon]");
-        event.setLine(1, this.unusedids.get(0));
+        event.setLine(1,""+ this.unusedids.get(0));
         event.setLine(2, "");
         event.setLine(3, "");
         if (this.unusedids.size() <= 1) {
@@ -299,7 +299,7 @@ public class PirateCannon
         }
         event.getPlayer().sendMessage(ChatColor.AQUA + "Cannon created successfully.");
         event.setLine(0, "[Cannon]");
-        event.setLine(1, this.unusedids.get(0));
+        event.setLine(1,""+ this.unusedids.get(0));
         event.setLine(2, "");
         event.setLine(3, "");
         if (this.unusedids.size() <= 1) {
@@ -373,7 +373,7 @@ public class PirateCannon
     String string = "";
     for (Integer i : list) {
       if (string.equals("")) {
-        string = i;
+        string = ""+ i;
       } else {
         string = string + "," + i;
       }
